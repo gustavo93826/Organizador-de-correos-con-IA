@@ -1,0 +1,26 @@
+# Organizador de correos con IA
+
+Aplicación que se conecta a Gmail y organiza automáticamente la bandeja usando un LLM:
+clasifica, resume, prioriza y sugiere borradores de respuesta.
+
+## Estado del proyecto
+
+- [x] Paso 1 — Preparación del entorno y accesos
+- [ ] Paso 2 — Conexión y autenticación con Gmail
+- [ ] Paso 3 — Modelo de datos y base de datos
+- [ ] Paso 4 — Esquemas de salida estructurada del LLM
+- [ ] Paso 5 — Primera integración con Gemini
+- [ ] Paso 6 — Las 4 funciones de IA como piezas independientes
+- [ ] Paso 7 — Orquestación del workflow con Prefect
+- [ ] Paso 8 — Automatización con APScheduler
+- [ ] Paso 9 — Capa de API con FastAPI
+- [ ] Paso 10 — Interfaz de usuario con Streamlit
+- [ ] Paso 11 — Testing
+- [ ] Paso 12 — Logging y manejo de errores robusto
+- [ ] Paso 13 — Containerización con Docker
+- [ ] Paso 14 — Despliegue en Render
+
+## Stack
+
+Python 3.12 · FastAPI · Gemini 2.5 Flash (google-genai) · Pydantic · SQLite + SQLModel ·
+APScheduler · Prefect · tenacity · Loguru · Streamlit · uv · Docker · Render

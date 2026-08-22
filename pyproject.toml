@@ -1,0 +1,42 @@
+[project]
+name = "organizador-correos-ia"
+version = "0.1.0"
+description = "Organizador de correos con IA: clasifica, resume, prioriza y sugiere respuestas usando un LLM."
+requires-python = ">=3.12"
+dependencies = [
+    # Backend / API
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.32",
+    # LLM
+    "google-genai>=0.3",
+    # Validación / datos estructurados
+    "pydantic>=2.9",
+    # Base de datos / ORM
+    "sqlmodel>=0.0.22",
+    # Gmail API + OAuth2
+    "google-api-python-client>=2.149",
+    "google-auth-httplib2>=0.2",
+    "google-auth-oauthlib>=1.2",
+    # Automatización / scheduling
+    "apscheduler>=3.10",
+    # Orquestación de workflows
+    "prefect>=3.0",
+    # Reintentos / backoff ante rate limits
+    "tenacity>=9.0",
+    # Logging
+    "loguru>=0.7",
+    # Variables de entorno
+    "python-dotenv>=1.0",
+    # Interfaz de usuario
+    "streamlit>=1.39",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3",
+    "pytest-mock>=3.14",
+    "httpx>=0.27",  # cliente de test para FastAPI
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

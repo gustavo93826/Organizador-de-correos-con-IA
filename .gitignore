@@ -1,0 +1,27 @@
+# Entorno / dependencias
+.venv/
+__pycache__/
+*.pyc
+.uv/
+
+# Secretos y credenciales
+.env
+credentials.json
+token.json
+
+# Base de datos local
+data/*.db
+data/*.sqlite3
+
+# Prefect
+.prefect/
+
+# Logs
+*.log
+
+# Editor
+.vscode/
+.idea/
+
+# OS
+.DS_Store
