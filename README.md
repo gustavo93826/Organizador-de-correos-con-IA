@@ -6,9 +6,9 @@ clasifica, resume, prioriza y sugiere borradores de respuesta.
 ## Estado del proyecto
 
 - [x] Paso 1 — Preparación del entorno y accesos
-- [ ] Paso 2 — Conexión y autenticación con Gmail
-- [ ] Paso 3 — Modelo de datos y base de datos
-- [ ] Paso 4 — Esquemas de salida estructurada del LLM
+- [x] Paso 2 — Conexión y autenticación con Gmail
+- [x] Paso 3 — Modelo de datos y base de datos
+- [x] Paso 4 — Esquemas de salida estructurada del LLM
 - [ ] Paso 5 — Primera integración con Gemini
 - [ ] Paso 6 — Las 4 funciones de IA como piezas independientes
 - [ ] Paso 7 — Orquestación del workflow con Prefect
