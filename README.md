@@ -9,8 +9,8 @@ clasifica, resume, prioriza y sugiere borradores de respuesta.
 - [x] Paso 2 — Conexión y autenticación con Gmail
 - [x] Paso 3 — Modelo de datos y base de datos
 - [x] Paso 4 — Esquemas de salida estructurada del LLM
-- [ ] Paso 5 — Primera integración con Gemini
-- [ ] Paso 6 — Las 4 funciones de IA como piezas independientes
+- [x] Paso 5 — Primera integración con Gemini
+- [x] Paso 6 — Las 4 funciones de IA como piezas independientes
 - [ ] Paso 7 — Orquestación del workflow con Prefect
 - [ ] Paso 8 — Automatización con APScheduler
 - [ ] Paso 9 — Capa de API con FastAPI
