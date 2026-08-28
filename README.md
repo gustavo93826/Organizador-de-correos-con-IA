@@ -11,8 +11,8 @@ clasifica, resume, prioriza y sugiere borradores de respuesta.
 - [x] Paso 4 — Esquemas de salida estructurada del LLM
 - [x] Paso 5 — Primera integración con Gemini
 - [x] Paso 6 — Las 4 funciones de IA como piezas independientes
-- [ ] Paso 7 — Orquestación del workflow con Prefect
-- [ ] Paso 8 — Automatización con APScheduler
+- [x] Paso 7 — Orquestación del workflow con Prefect
+- [x] Paso 8 — Automatización con APScheduler
 - [ ] Paso 9 — Capa de API con FastAPI
 - [ ] Paso 10 — Interfaz de usuario con Streamlit
 - [ ] Paso 11 — Testing
