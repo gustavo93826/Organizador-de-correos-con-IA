@@ -1,7 +1,7 @@
 """Script manual para correr el scheduler de forma standalone.
 
 Uso:
-    uv run python scripts/iniciar_scheduler.py
+    uv run python -m scripts.iniciar_scheduler
 
 Detén con Ctrl+C.
 """

@@ -13,8 +13,8 @@ clasifica, resume, prioriza y sugiere borradores de respuesta.
 - [x] Paso 6 — Las 4 funciones de IA como piezas independientes
 - [x] Paso 7 — Orquestación del workflow con Prefect
 - [x] Paso 8 — Automatización con APScheduler
-- [ ] Paso 9 — Capa de API con FastAPI
-- [ ] Paso 10 — Interfaz de usuario con Streamlit
+- [x] Paso 9 — Capa de API con FastAPI
+- [x] Paso 10 — Interfaz de usuario con Streamlit
 - [ ] Paso 11 — Testing
 - [ ] Paso 12 — Logging y manejo de errores robusto
 - [ ] Paso 13 — Containerización con Docker
