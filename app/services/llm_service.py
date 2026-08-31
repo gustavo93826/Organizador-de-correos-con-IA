@@ -3,6 +3,8 @@
 Centraliza el cliente de Gemini y la función genérica para pedir
 salidas estructuradas validadas con un esquema Pydantic.
 """
+import json
+
 from google import genai
 from google.genai.errors import ClientError, ServerError
 from loguru import logger
@@ -60,19 +62,29 @@ def llamar_llm_estructurado(prompt: str, esquema: type[BaseModel]) -> BaseModel:
 
     logger.debug(f"Llamando a Gemini ({MODEL}) con esquema {esquema.__name__}...")
 
-    response = client.models.generate_content(
-        model=MODEL,
-        contents=prompt,
+    chat = client.chats.create(model=MODEL)
+    response = chat.send_message(
+        prompt,
         config={
             "response_mime_type": "application/json",
             "response_schema": esquema,
         },
     )
 
-    if response.parsed is None:
-        raise ValueError(
-            f"Gemini no devolvió una respuesta válida para {esquema.__name__}: "
-            f"{response.text}"
-        )
+    if response.parsed is not None:
+        return response.parsed
 
-    return response.parsed
+    if response.text:
+        try:
+            payload = json.loads(response.text)
+            return esquema.model_validate(payload)
+        except (TypeError, ValueError, json.JSONDecodeError) as exc:
+            raise ValueError(
+                f"Gemini no devolvió una respuesta válida para {esquema.__name__}: "
+                f"{response.text}"
+            ) from exc
+
+    raise ValueError(
+        f"Gemini no devolvió una respuesta válida para {esquema.__name__}: "
+        f"{response.text}"
+    )
