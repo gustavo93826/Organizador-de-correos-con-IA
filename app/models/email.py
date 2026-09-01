@@ -1,7 +1,7 @@
 """Modelo de datos principal: representa un correo y todo lo que
 la IA produce sobre él (categoría, resumen, prioridad, borrador).
 """
-from datetime import datetime
+from datetime import UTC, datetime
 from enum import Enum
 
 from sqlmodel import Field, SQLModel
@@ -48,5 +48,5 @@ class Email(SQLModel, table=True):
 
     estado_procesamiento: EstadoProcesamiento = Field(default=EstadoProcesamiento.PENDIENTE)
 
-    creado_en: datetime = Field(default_factory=datetime.utcnow)
-    actualizado_en: datetime = Field(default_factory=datetime.utcnow)
+    creado_en: datetime = Field(default_factory=lambda: datetime.now(UTC))
+    actualizado_en: datetime = Field(default_factory=lambda: datetime.now(UTC))

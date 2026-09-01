@@ -37,6 +37,7 @@ dev = [
     "pytest>=8.3",
     "pytest-mock>=3.14",
     "httpx>=0.27",  # cliente de test para FastAPI
+    "httpx2>=0.1",  # cliente compatible con Starlette TestClient
 ]
 
 [tool.pytest.ini_options]
