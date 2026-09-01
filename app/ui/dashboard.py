@@ -1,7 +1,7 @@
 """Interfaz Streamlit: bandeja organizada por categoría/prioridad, con
 resumen visible y borrador de respuesta editable.
 
-Consume la API de FastAPI (Paso 9) vía HTTP -- no accede a la base de
+Consume la API de FastAPI vía HTTP -- no accede a la base de
 datos directamente, para mantener una única fuente de verdad.
 
 Uso:

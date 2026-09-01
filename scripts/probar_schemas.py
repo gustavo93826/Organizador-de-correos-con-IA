@@ -1,5 +1,5 @@
 """Script manual para validar que los esquemas Pydantic funcionan
-correctamente antes de conectarlos con el LLM (eso será el Paso 5).
+correctamente antes de conectarlos con el LLM.
 
 Uso:
     uv run python -m scripts.probar_schemas

@@ -15,8 +15,8 @@ clasifica, resume, prioriza y sugiere borradores de respuesta.
 - [x] Paso 8 — Automatización con APScheduler
 - [x] Paso 9 — Capa de API con FastAPI
 - [x] Paso 10 — Interfaz de usuario con Streamlit
-- [ ] Paso 11 — Testing
-- [ ] Paso 12 — Logging y manejo de errores robusto
+- [x] Paso 11 — Testing
+- [x] Paso 12 — Logging y manejo de errores robusto
 - [ ] Paso 13 — Containerización con Docker
 - [ ] Paso 14 — Despliegue en Render
 

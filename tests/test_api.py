@@ -1,4 +1,4 @@
-"""Pruebas de integración de los endpoints de la API (Paso 9)."""
+"""Pruebas de integración de los endpoints de la API."""
 from datetime import UTC, datetime
 
 from sqlmodel import Session
@@ -74,3 +74,17 @@ def test_reprocesar_email(client, session, mocker):
     respuesta = client.post(f"/emails/{email.id}/reprocesar")
     assert respuesta.status_code == 202
     mock_procesar.assert_called_once_with(email.id)
+    
+
+def test_manejador_global_de_errores(client):
+    from app.core.database import get_session
+    from app.main import app
+
+    def sesion_rota():
+        raise RuntimeError("Fallo simulado de base de datos")
+
+    app.dependency_overrides[get_session] = sesion_rota
+
+    respuesta = client.get("/emails")
+    assert respuesta.status_code == 500
+    assert respuesta.json()["detail"].startswith("Ocurrió un error interno")

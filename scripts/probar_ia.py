@@ -1,5 +1,5 @@
 """Script manual para probar las 4 funciones de IA por separado,
-todavía sin encadenarlas (eso será el Paso 7).
+todavía sin encadenarlas.
 
 Uso:
     uv run python -m scripts.probar_ia

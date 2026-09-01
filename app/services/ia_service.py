@@ -1,8 +1,7 @@
 """Las 4 funciones de IA del proyecto: clasificar, resumir, priorizar
 y redactar. Cada una es independiente y reutilizable — reciben datos
 simples (no dependen del modelo Email ni de la base de datos), lo que
-las hace fáciles de probar y de encadenar más adelante en el workflow
-del Paso 7.
+las hace fáciles de probar y de encadenar más adelante en el workflow.
 """
 from app.models.email import Categoria
 from app.models.schemas import (

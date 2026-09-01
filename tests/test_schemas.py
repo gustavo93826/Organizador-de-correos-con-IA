@@ -1,4 +1,4 @@
-"""Pruebas de validación de los esquemas de salida del LLM (Paso 4)."""
+"""Pruebas de validación de los esquemas de salida del LLM."""
 import pytest
 from pydantic import ValidationError
 

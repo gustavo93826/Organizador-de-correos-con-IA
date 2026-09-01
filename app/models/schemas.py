@@ -3,7 +3,7 @@
 Cada esquema define el contrato exacto que Gemini debe devolver para
 cada una de las 4 tareas de IA: clasificar, resumir, priorizar y redactar.
 Se usan tanto para validar la respuesta del modelo como para generar
-el `response_schema` que se le pasa a la API de Gemini (Paso 5).
+el `response_schema` que se le pasa a la API de Gemini.
 """
 from pydantic import BaseModel, Field
 

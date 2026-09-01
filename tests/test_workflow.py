@@ -1,4 +1,4 @@
-"""Pruebas del workflow de Prefect (Paso 7), con las llamadas al LLM
+"""Pruebas del workflow de Prefect, con las llamadas al LLM
 mockeadas para no gastar cuota real de Gemini durante los tests."""
 from datetime import UTC, datetime
 

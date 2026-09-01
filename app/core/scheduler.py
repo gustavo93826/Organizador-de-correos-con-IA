@@ -1,5 +1,4 @@
 """Configuración del scheduler: qué job correr y con qué frecuencia.
-Se reutilizará en el Paso 9 dentro del ciclo de vida de FastAPI.
 """
 from datetime import datetime
 

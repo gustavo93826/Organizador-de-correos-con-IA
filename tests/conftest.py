@@ -46,7 +46,11 @@ def client_fixture(session, monkeypatch):
     app.dependency_overrides[get_session] = get_session_override
     monkeypatch.setattr("app.main.crear_scheduler", lambda: _SchedulerFalso())
 
-    with TestClient(app) as client:
+    # raise_server_exceptions=False:  probar el comportamiento real
+    # de producción, donde el manejador global convierte una excepción no
+    # controlada en una respuesta 500 en vez de relanzarla (que es lo que
+    # el TestClient hace por defecto, pensado para depurar).
+    with TestClient(app, raise_server_exceptions=False) as client:
         yield client
 
     app.dependency_overrides.clear()

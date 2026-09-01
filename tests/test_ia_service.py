@@ -1,4 +1,4 @@
-"""Pruebas unitarias de las 4 funciones de IA (Paso 6), con el LLM
+"""Pruebas unitarias de las 4 funciones de IA, con el LLM
 mockeado para no depender de una llamada real a Gemini."""
 from app.models.email import Categoria
 from app.models.schemas import BorradorOutput, ClasificacionOutput

@@ -30,6 +30,14 @@ def get_gmail_service():
             logger.info("Token expirado, refrescando...")
             creds.refresh(Request())
         else:
+            if not settings.gmail_credentials_path.exists():
+                logger.error(
+                    f"No se encontró '{settings.gmail_credentials_path}'. "
+                    "Descárgalo desde Google Cloud Console y colócalo en la raíz del proyecto."
+                )
+                raise FileNotFoundError(
+                    f"Falta el archivo de credenciales de Gmail: {settings.gmail_credentials_path}"
+                )
             logger.info("No hay token válido, iniciando flujo de consentimiento OAuth2...")
             flow = InstalledAppFlow.from_client_secrets_file(
                 str(settings.gmail_credentials_path), SCOPES

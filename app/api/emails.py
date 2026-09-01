@@ -1,5 +1,6 @@
 """Endpoints REST para consultar y gestionar los correos procesados."""
 from fastapi import APIRouter, BackgroundTasks, Depends, HTTPException
+from loguru import logger
 from sqlmodel import Session, select
 
 from app.api.schemas import ActualizarBorrador, EmailDetail, EmailListItem
@@ -76,5 +77,19 @@ def reprocesar_email(
     session.add(email)
     session.commit()
 
-    background_tasks.add_task(procesar_un_email, email_id)
+    background_tasks.add_task(_reprocesar_en_segundo_plano, email_id)
     return {"mensaje": f"Reprocesamiento del correo {email_id} iniciado en segundo plano."}
+
+
+def _reprocesar_en_segundo_plano(email_id: int) -> None:
+    """Wrapper para BackgroundTasks.
+
+    `procesar_un_email` ya deja el correo en estado ERROR y relanza la
+    excepción (para que Prefect y el scheduler se enteren del fallo).
+    Como nadie más va a capturarla, se registra con logging
+    en vez de dejar que Starlette la reporte como un traceback crudo.
+    """
+    try:
+        procesar_un_email(email_id)
+    except Exception:
+        logger.exception(f"Reprocesamiento en segundo plano falló para el correo {email_id}.")
