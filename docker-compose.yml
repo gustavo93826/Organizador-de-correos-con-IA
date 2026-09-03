@@ -1,0 +1,25 @@
+services:
+  api:
+    build: .
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+      - ./credentials.json:/app/credentials.json:ro
+      - ./token.json:/app/token.json
+    restart: unless-stopped
+
+  ui:
+    build: .
+    command: streamlit run app/ui/dashboard.py --server.address 0.0.0.0 --server.port 8501
+    ports:
+      - "8501:8501"
+    environment:
+      - API_BASE_URL=http://api:8000
+    depends_on:
+      - api
+    restart: unless-stopped

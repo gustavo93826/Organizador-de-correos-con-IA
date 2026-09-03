@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.pyc
+.git/
+.pytest_cache/
+logs/
+data/
+.env
+credentials.json
+token.json
+scripts/
+tests/
+*.md
+.prefect/
