@@ -17,8 +17,7 @@ clasifica, resume, prioriza y sugiere borradores de respuesta.
 - [x] Paso 10 — Interfaz de usuario con Streamlit
 - [x] Paso 11 — Testing
 - [x] Paso 12 — Logging y manejo de errores robusto
-- [ ] Paso 13 — Containerización con Docker
-- [ ] Paso 14 — Despliegue en Render
+- [x] Paso 13 — Containerización con Docker
 
 ## Stack
 
